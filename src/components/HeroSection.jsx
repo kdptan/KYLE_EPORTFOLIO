@@ -78,7 +78,7 @@ export const HeroSection = () => {
                 <div className="text-center space-y-6 w-full">
                   <div className="w-56 h-56 mx-auto rounded-full overflow-hidden border-4 border-primary shadow-2xl">
                     <img
-                      src="/2x2.png"
+                      src="/projects/2x2.png"
                       alt="Kyle Daniel Tan"
                       className="w-full h-full object-cover"
                     />
