@@ -1,34 +1,56 @@
 import {
-  Instagram,
   Linkedin,
   Mail,
   MapPin,
   Phone,
   Send,
-  Twitch,
-  Twitter,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init("7Pmpaj28-7w6ZSLji");
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast({
-        title: "✓ Message sent successfully!",
-        description: "Thanks for reaching out! I'll get back to you within 24 hours.",
+    const formData = {
+      from_name: e.target.name.value,
+      from_email: e.target.email.value,
+      message: e.target.message.value,
+    };
+
+    emailjs
+      .send(
+        "service_dwlq6kj",
+        "template_xbp1mu2",
+        formData
+      )
+      .then((response) => {
+        toast({
+          title: "✓ Message sent successfully!",
+          description: "Thanks for reaching out! I'll get back to you within 24 hours.",
+        });
+        setIsSubmitting(false);
+        e.target.reset();
+      })
+      .catch((error) => {
+        toast({
+          title: "✗ Failed to send message",
+          description: "Please try again or contact me directly via email.",
+        });
+        console.error("Email error:", error);
+        setIsSubmitting(false);
       });
-      setIsSubmitting(false);
-      e.target.reset();
-    }, 1500);
   };
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30 overflow-hidden">
@@ -68,7 +90,7 @@ export const ContactSection = () => {
                     </span>
                   </div>
                   <p className="text-muted-foreground">
-                    kyledanieltan2018@gmail.com
+                    kdptan@addu.edu.ph
                   </p>
                 </div>
               </div>
@@ -84,7 +106,7 @@ export const ContactSection = () => {
                     </span>
                   </div>
                   <p className="text-muted-foreground">
-                    +63 966 860 0501
+                    +63 976 264 2828
                   </p>
                 </div>
               </div>
@@ -109,17 +131,8 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank" className="transition-transform hover:-translate-y-1">
+                <a href="https://www.linkedin.com/in/kyle-daniel-b120763a9/?skipRedirect=true" target="_blank" rel="noopener noreferrer" className="transition-transform hover:-translate-y-1">
                   <Linkedin />
-                </a>
-                <a href="#" target="_blank" className="transition-transform hover:-translate-y-1">
-                  <Twitter />
-                </a>
-                <a href="#" target="_blank" className="transition-transform hover:-translate-y-1">
-                  <Instagram />
-                </a>
-                <a href="#" target="_blank" className="transition-transform hover:-translate-y-1">
-                  <Twitch />
                 </a>
               </div>
             </div>

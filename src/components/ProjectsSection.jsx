@@ -13,21 +13,21 @@ const projects = [
   },
   {
     id: 2,
-    title: "Weather App",
+    title: "Chonky Boi Pet Store & Grooming Salon Website",
     description:
-      "Real-time weather application that fetches current conditions and forecasts using a weather API with location-based search.",
-    image: "/projects/project2.jpg",
-    tags: ["JavaScript", "API", "CSS"],
+      "A web-based catalog that allows customers to browse current inventory and reserve pet supplies and grooming services for convenient in-store pickup.",
+    image: "/projects/project4.png",
+    tags: ["React", "Web Development", "E-commerce"],
     demoUrl: "#",
     githubUrl: "#",
   },
   {
     id: 3,
-    title: "Hangman Game",
+    title: "PAGSUBAY Project",
     description:
-      "Interactive word-guessing game with random word generation, score tracking, and visual feedback for correct and incorrect guesses.",
-    image: "/projects/project3.jpg",
-    tags: ["JavaScript", "HTML", "CSS"],
+      "A collaborative government project with PHIVOLCS focused on developing a system that applies circle theory and magnitude data to accurately calculate and pinpoint earthquake epicenters.",
+    image: "/projects/project5.png",
+    tags: ["System Development", "Government", "Ongoing"],
     demoUrl: "#",
     githubUrl: "#",
   },
@@ -137,25 +137,6 @@ export const ProjectsSection = () => {
                     {tag}
                   </span>
                 ))}
-              </div>
-
-              <div className="flex gap-4">
-                <a
-                  href={projects[activeIndex].demoUrl}
-                  target="_blank"
-                  className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors group"
-                  aria-label="View Demo"
-                >
-                  <ExternalLink size={20} className="group-hover:text-primary transition-colors" />
-                </a>
-                <a
-                  href={projects[activeIndex].githubUrl}
-                  target="_blank"
-                  className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors group"
-                  aria-label="View Code"
-                >
-                  <Github size={20} className="group-hover:text-primary transition-colors" />
-                </a>
               </div>
             </div>
           </div>

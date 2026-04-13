@@ -43,21 +43,25 @@ export const HeroSection = () => {
             {/* Social Links */}
             <div className="flex gap-4 pt-4 opacity-0 animate-fade-in-delay-4">
               <a
-                href="#"
+                href="https://github.com/settings/profile"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-secondary hover:bg-primary/20 transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/kyle-daniel-b120763a9/?skipRedirect=true"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-secondary hover:bg-primary/20 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="#contact"
                 className="p-3 rounded-full bg-secondary hover:bg-primary/20 transition-colors"
                 aria-label="Email"
               >
